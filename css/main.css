@@ -1,0 +1,229 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+	--color-header: #f4efec;
+	--color-text: #cdc6c3;
+	--gallery-gap: calc(var(--index) * 7.5)
+}
+@font-face {
+	font-family: raleway-c;
+	src: url(../fonts/raleway-regular.woff2);
+}
+@font-face {
+	font-family: outfit-c;
+	src: url(../fonts/outfit-regular.woff2);
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: outfit-c;
+}
+.content, .hero, .main-header, .gallery, .footer > * {
+	will-change: transform;
+}
+body {
+	background-image: url(../img/bg.jpg);
+	background-size: 50px;
+	color: #fafafa;
+	font-family: raleway-c;
+	overflow-x: hidden;
+	display: grid;
+	width: 100%;
+	height: 100%;
+	place-items: center;
+}
+.hero {
+	width: calc(var(--index) * 36);
+	position: absolute;
+	left: 47.5vw;
+	top: -1vh;
+	z-index: -1;
+}
+.main-header {
+	height: 100vh;
+}
+.container {
+	padding: 0 7vw;
+}
+.main-title {
+	font-size: calc(var(--index) * 8);
+	font-family: raleway-c;
+	position: absolute;
+	width: min-content;
+	bottom: 12vh;
+	line-height: .9;
+}
+.gallery {
+	display: flex;
+	padding: calc(var(--index) * 10) 0;
+}
+.gallery > * {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.gallery__item {
+	max-width: calc(var(--index) * 21);
+	margin-bottom: var(--gallery-gap);
+	max-height: 180vh;
+	border-radius: 8px;
+}
+.gallery__left {
+	margin-top: calc(var(--gallery-gap) * 1.75);
+}
+.gallery__right .gallery__item {
+	margin: 0;
+	margin-top: var(--gallery-gap);
+}
+.text-block {
+	color: var(--color-text);
+	position: relative;
+}
+.text-block__h {
+	font-size: 2rem;
+	font-family: raleway-c;
+	line-height: 2.4rem;
+	color: var(--color-header);
+	margin-bottom: 1.5rem;
+}
+.text-block__p {
+	line-height: 1.75;
+	font-family: raleway-c;
+}
+
+.footer{
+	padding: calc(var(--index) * 8) 0;
+	font-family: raleway-c;
+    padding: 10px;
+    text-align: center;
+    margin-top: -40px;
+	margin-left: 35px;
+    width: 100%;
+}
+.link{
+    background-color: #0a0a0a;
+}
+
+.link-nav{
+	height: 0vh;
+	width: 100%;
+	position: fixed;
+	bottom: 4565px;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	z-index: 999;
+}
+.link-nav a{
+    position: relative;
+    text-decoration: none;
+    font-family: 'Poppins',sans-serif;
+    color: #a0a0a0;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+}
+.link-nav a:after{
+    content: "";
+    position: absolute;
+    background-color: #ff3c78;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+.link-nav a:hover{
+    color: #ffffff;
+}
+.link-nav a:hover:after{
+    width: 100%;
+}
+
+.singlecol{
+	width: 100%;
+	margin-top: -40px;
+	margin-left: 1200px;
+	align-items: center;
+}
+
+.social-icon a{
+	text-decoration: none;
+	margin: 0 20px;
+	color: white;
+	font-size: 2rem;
+}
+
+.social-icon .fa{
+	color: #000000;
+    font-size: 25px;
+    line-height: 50px;
+    transition: .5s;
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		padding: 0 2vw; /* Изменено: уменьшен отступ по бокам контейнера */
+	}
+
+	.gallery {
+		padding: calc(var(--index) * 5) 0; /* Изменено: уменьшен отступ внутри галереи */
+	}
+
+	.main-title {
+		font-size: calc(var(--index) * 5); /* Изменено: уменьшен размер заголовка */
+		bottom: 8vh; /* Изменено: уменьшен отступ от нижней границы */
+	}
+
+	.gallery__item {
+		max-width: calc(var(--index) * 18); /* Изменено: уменьшен максимальный размер элемента галереи */
+	}
+
+	.text-block__h {
+		font-size: 1.5rem; /* Изменено: уменьшен размер заголовков текстовых блоков */
+		line-height: 1.8rem; /* Изменено: уменьшен интерлиньяж заголовков текстовых блоков */
+	}
+
+	.text-block__p {
+		line-height: 1.5; /* Изменено: уменьшен интерлиньяж параграфов текстовых блоков */
+	}
+
+	.footer {
+		margin-left: 0; /* Изменено: удален отступ слева */
+	}
+
+	.link-nav {
+		display: none; /* Изменено: скрыта навигационная панель */
+	}
+
+	.singlecol {
+		margin-left: 0; /* Изменено: установлен отступ слева в 0 */
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.container {
+		padding: 0 1vw; /* Изменено: уменьшен отступ по бокам контейнера */
+	}
+
+	.gallery__item {
+		max-width: calc(var(--index) * 14); /* Изменено: уменьшен максимальный размер элемента галереи */
+	}
+
+	.text-block__h {
+		font-size: 1.2rem; /* Изменено: уменьшен размер заголовков текстовых блоков */
+		line-height: 1.4rem; /* Изменено: уменьшен интерлиньяж заголовков текстовых блоков */
+	}
+
+	.text-block__p {
+		line-height: 1.3; /* Изменено: уменьшен интерлиньяж параграфов текстовых блоков */
+	}
+
+	.singlecol {
+		margin-left: 0; /* Изменено: установлен отступ слева в 0 */
+	}
+}
